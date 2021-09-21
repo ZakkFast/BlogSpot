@@ -1,0 +1,24 @@
+[
+  {
+    "user_name": "Mod",
+    "email": "sal@hotmail.com",
+    "pwd": "pwd12345",
+    "github": "www.google.com"
+  },
+  {
+    "user_name": "MarvelFan87",
+    "email": "lernantino@gmail.com",
+    "pwd": "pwd12345"
+  },
+  {
+    "user_name": "FeedDahTroll",
+    "email": "amiko2k20@aol.com",
+    "pwd": "pwd12345"
+  },
+  {
+    "user_name": "MarcusAurelius",
+    "email": "testlogin@testlogin.com",
+    "pwd": "123123",
+    "github": "https://en.wikipedia.org/wiki/Marcus_Aurelius"
+  }
+]

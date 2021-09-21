@@ -1,0 +1,22 @@
+[
+    {
+        "user_id": 1,
+        "post_id": 1,
+        "content": "If you're reading this keep calm and carry on. Everything is working as it should.. hopefully."
+    },
+    {
+        "user_id": 2,
+        "post_id": 2,
+        "content": "Deadpool could totally talk the Hulk... just saying."
+    },
+    {
+        "user_id": 3,
+        "post_id": 3,
+        "content": "Insert stereotypical trolling comment here"
+    },
+    {
+        "user_id": 4,
+        "post_id": 4,
+        "content": "Never let the future disturb you. You will meet it, if you have to, with the same weapons of reason which today arm you against the present."
+    }
+]
