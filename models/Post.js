@@ -1,7 +1,5 @@
 const sequelize = require("../config/connection");
 const { Model, DataTypes } = require("sequelize");
-const { post } = require("got");
-const database = require("mime-db");
 
 class Post extends Model {}
 
