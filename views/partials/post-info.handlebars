@@ -13,12 +13,12 @@
 
     <div>
         <div>
-            {{post_content}}
+            <a href="/post/{{id}}">{{subject_name}}</a>
         </div>
             <div>
-                <b>{{user.username}}</b> | 
-                <a href="https://github.com/{{user.github}}"><i class="fab fa-github"></i></a>
-                 | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+                <b>{{user.user_name}}</b> | 
+                <a href="https://github.com/{{user.github}}">github</a>
+                 | {{format_date date_created}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>
         
     </div>

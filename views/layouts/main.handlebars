@@ -13,16 +13,17 @@
             <nav>
                 <a href="/">Home</a>
                 {{#if loggedIn}}
-                <a href="/">Dashboard</a>
-                <a href="/">Create Post</a>
-                <a href="/">Logout</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/dashboard/create">Create Post</a>
+                <button id="logout">Logout</a>
                 {{else}}
                 <a href="">Login</a>
+                {{/if}}
             </nav>
         </header>
 
         <main>
-            {{{body}}}
+            {{{ body }}}
         </main>
 
         <footer>
@@ -35,12 +36,10 @@
                 <a href="/">Logout</a>
                 {{else}}
                 <a href="">Login</a>
+                {{/if}}
                 </p>
             </div>
         </footer>
     </div>
-
-    {{#if loggedIn}}
-    <script src="/public/js/Logout"></script>
 
 </html>
