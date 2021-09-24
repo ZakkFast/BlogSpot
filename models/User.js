@@ -61,3 +61,9 @@ User.init(
 );
 
 module.exports = User;
+
+// karma: {
+//   type: DataTypes.INTEGER,
+//   allowNull: false,
+//   defaultValue: "0",
+// },
