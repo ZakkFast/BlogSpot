@@ -20,5 +20,11 @@
     "email": "testlogin@testlogin.com",
     "pwd": "123123",
     "github": "https://en.wikipedia.org/wiki/Marcus_Aurelius"
+  },
+  {
+    "user_name": "zakk",
+    "email": "zakk@zakk.com",
+    "pwd": "123123",
+    "github": "zakkfast"
   }
 ]

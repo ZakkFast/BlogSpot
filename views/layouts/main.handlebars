@@ -17,7 +17,7 @@
                 <a href="/dashboard/create">Create Post</a>
                 <button id="logout">Logout</a>
                 {{else}}
-                <a href="">Login</a>
+                <a href="/login">Login</a>
                 {{/if}}
             </nav>
         </header>
@@ -31,11 +31,11 @@
                 <p>
                 <a href="/">Home</a>
                 {{#if loggedIn}}
-                <a href="/">Dashboard</a>
-                <a href="/">Create Post</a>
-                <a href="/">Logout</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/dashboard/create">Create Post</a>
+                <a href="/logout">Logout</a>
                 {{else}}
-                <a href="">Login</a>
+                <a href="/login">Login</a>
                 {{/if}}
                 </p>
             </div>
