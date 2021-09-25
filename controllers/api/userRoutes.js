@@ -22,7 +22,6 @@ router.post('/login', (req, res) => {
       }
   
       req.session.save(() => {
-        // declare session variables
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.github = dbUserData.github;
@@ -32,5 +31,16 @@ router.post('/login', (req, res) => {
       });
     });
   });
+
+  router.post('/logout', (req, res) => {
+    if(req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end()
+      })
+    }
+    else {
+      res.status(404).end()
+    }
+  })
 
   module.exports = router
