@@ -14,7 +14,7 @@ router.post('/login', (req, res) => {
         return;
       }
   
-      const validPassword = dbUserData.checkPassword(req.body.password);
+      const validPassword = dbUserData.checkPassword(req.body.pwd);
   
       if (!validPassword) {
         res.status(400).json({ message: 'Incorrect password!' });
@@ -42,5 +42,25 @@ router.post('/login', (req, res) => {
       res.status(404).end()
     }
   })
+
+  router.post('/', (req, res) => {
+    User.create({
+      user_name: req.body.user_name,
+      email: req.body.email,
+      pwd: req.body.pwd,
+      twitter: req.body.twitter,
+      github: req.body.github
+    })
+    .then(dbUserData => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.user_name = dbUserData.user_name;
+        req.session.github = dbUserData.github;
+        req.session.loggedIn = true;
+    
+        res.json(dbUserData);
+      });
+    });
+  });
 
   module.exports = router
