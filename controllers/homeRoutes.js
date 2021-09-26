@@ -32,6 +32,54 @@ router.get("/", async (req, res) => {
   }
 });
 
+
+router.get('/post/:id', (req, res) => {
+  Post.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'subject_name',
+      'date_created',
+      'body_content'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['user_name','github']
+        }
+      },
+      {
+        model: User,
+        attributes: ['user_name','github']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+
+      // serialize the data
+      const post = dbPostData.get({ plain: true });
+
+      // pass data to template
+      res.render('post', {
+          post,
+          loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
