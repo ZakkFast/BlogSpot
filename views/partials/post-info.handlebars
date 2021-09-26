@@ -1,23 +1,24 @@
-<di>
+<div>
   <header>
     
-        <div>
-            <p></p>
-      <a href="/post/{{id}}">{{title}}</a></p>
+      <div>
+            <p>
+                {{subject_name}}
+            </p>
       </div>
 
-      <div>
+      <div class="column">
+      <span class=""> </span>
       </div>
-    
   </header>
 
     <div>
         <div>
-            <a href="/post/{{id}}">{{subject_name}}</a>
+            {{body_content}}
         </div>
             <div>
                 <b>{{user.user_name}}</b> | 
-                <a href="https://github.com/{{user.github}}">github</a>
+                <a href="https://github.com/{{user.github}}">GitHub</a>
                  | {{format_date date_created}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>
         
