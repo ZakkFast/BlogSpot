@@ -17,8 +17,8 @@ router.get("/", async (req, res) => {
         },
         {
           model: User,
-          attributes: ["user_name", "github"]
-        }
+          attributes: ["user_name", "github"],
+        },
       ],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -32,70 +32,62 @@ router.get("/", async (req, res) => {
   }
 });
 
-
-router.get('/post/:id', (req, res) => {
+router.get("/post/:id", (req, res) => {
   Post.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
-    attributes: [
-      'id',
-      'subject_name',
-      'date_created',
-      'body_content'
-    ],
+    attributes: ["id", "subject_name", "date_created", "body_content"],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'content', 'post_id', 'user_id', 'created_at'],
+        attributes: ["id", "content", "post_id", "user_id", "created_at"],
         include: {
           model: User,
-          attributes: ['user_name','github']
-        }
+          attributes: ["user_name", "github"],
+        },
       },
       {
         model: User,
-        attributes: ['user_name','github']
-      }
-    ]
+        attributes: ["user_name", "github"],
+      },
+    ],
   })
-    .then(dbPostData => {
+    .then((dbPostData) => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: "No post found with this id" });
         return;
       }
 
-      // serialize the data
       const post = dbPostData.get({ plain: true });
 
-      // pass data to template
-      res.render('post', {
-          post,
-          loggedIn: req.session.loggedIn
-        });
+      res.render("post", {
+        post,
+        loggedIn: req.session.loggedIn,
+      });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
 
-  res.render('signup');
+  res.render("signup");
 });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
 
-  res.render('login');
+  res.render("login");
 });
 
 module.exports = router;
