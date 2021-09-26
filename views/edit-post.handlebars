@@ -1,23 +1,26 @@
 <article>
     <a href="/dashboard">Dashboard</a>
     <h2>Edit Post</h2>
-    <form>
+    <form class="edit-post">
         <div>
-            <label for="post-title">Post Title:</label>
-            <input type="text" name="post-title" value="{{post.title}}"/>
+            <label for="subject_name">Post Title:</label>
+            <input type="text" name="subject_name" value="{{post.subject_name}}"/>
         </div>
         <div>
-            <label for="post-content">Post Content</label>
-            <input type="text" name="post-body" value="{{post.post_body}}"/>
+            <label for="body_content">Post Content</label>
+            <input type="text" name="body_content" value="{{post.body_content}}"/>
         </div>
         <div>
-            {{!-- create by you {{format_date post.date_created}} --}}
-            <a href="/post/{{post.id}}">{{post.comments.length}} {{formate_plural "comment" {{post.comments.length}}</a>
+            created by you {{format_date post.date_created}}
+            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
         </div>
-        <button type="submit">Save Post</button>
-        <button type="button">Delete Post</button>
+        <button type="submit" class="save-btn">Save Post</button>
+        <button type="button" class="delete-btn">Delete Post</button>
     </form>
 </article>
 
 {{> comments post.comments}}
+
+<script src="/js/deletPost.js"></script>
+<script src="/js/editPost.js"></script>
 
