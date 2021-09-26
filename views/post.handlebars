@@ -4,13 +4,13 @@
 {{> comments post.comments}}
 
 {{#if loggedIn}}
-<form class="comment-body">
+<form class="comment-body p-3">
   <div>
-    <textarea name="content"></textarea>
+    <textarea class="form-control card-body" name="content"></textarea>
   </div>
 
   <div>
-    <button type="submit">Add a comment</button>
+    <button type="submit" class="float-end btn btn-primary m-2">Add a comment</button>
   </div>
   
 </form>

@@ -1,17 +1,16 @@
-<section>
-    <a href="/dashboard"> Dashboard</a>
-  <h2>Create New Post</h2><hr>
+<section class="card">
+  <h2 class="text-center card-header bg-dark text-light">Create New Post</h2><hr>
 
-  <form class="create-post">
+  <form class="create-post card-body">
     <div>
-      <label for="subject_name">Title:</label>
-      <input type="text" id="subject_name" name="subject_name" placeholder="Text"/>
+      <label for="subject_name" class="form-label">Subject</label>
+      <input class="form-control mb-2" type="text" id="subject_name" name="subject_name" placeholder=""/>
     </div>
     <div>
-      <label for="body_content">Content:</label>
-      <input id="body_content" name="body_content" placeholder="Text"/>
+      <label for="body_content" class="form-label">Body</label>
+      <textarea class="form-control" id="body_content" name="body_content" style="height: 250px" rows="3"/></textarea>
     </div>
-    <button type="submit">Create post</button>
+    <button type="submit" class="float-end btn btn-primary mt-2">Create post</button>
   </form>
 </section>
 

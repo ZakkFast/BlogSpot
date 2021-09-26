@@ -1,16 +1,15 @@
-<div>
-    <a href="/dashboard/create"><button>Create Post</button></a>
-    <h2>Your Posts</h2>
+<div class="card">
+    <h2 class="card-header bg-dark text-light text-center">Your Posts</h2>
 {{#if posts.length}}
-    </div>
-
+    <div class="card-body">
     {{#each posts as |post|}}
         {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}">Edit post</button></a>
         </div>
+            <a href="/dashboard/edit/{{post.id}}" class="btn btn-primary float-end">Edit post</button></a>
     {{/each}}
 
 {{else}}
-<h4>you do not currently have any posts</h4>
+<p class="card-body text-center">You do not currently have any posts. Click on 'New Post' so we can change that!</p>
+    </div>
 
 {{/if}}

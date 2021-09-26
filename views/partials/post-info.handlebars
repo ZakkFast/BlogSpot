@@ -1,25 +1,26 @@
-<div>
+<div class="card m-1">
   <header>
     
-      <div>
-            <p>
-                {{subject_name}}
-            </p>
+      <div class="card-header bg-dark">
+            <h6>
+                <a href="/post/{{id}}" class="text-decoration-none text-light">{{subject_name}}</a>
+            </h6>
       </div>
 
       <div class="column">
-      <span class=""> </span>
       </div>
   </header>
 
     <div>
-        <div>
+        <div class="card-body">
+            <p>
             {{body_content}}
+            </p>
         </div>
-            <div>
+            <div class="card-footer text-muted ">
                 <b>{{user.user_name}}</b> | 
-                <a href="https://github.com/{{user.github}}">GitHub</a>
-                 | {{format_date date_created}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+                <a href="https://github.com/{{user.github}}" class="text-decoration-none text-info">GitHub</a>
+                 | {{format_date date_created}} | <a href="/post/{{id}}" class="text-decoration-none text-dark">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>
         
     </div>

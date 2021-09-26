@@ -1,23 +1,24 @@
-<article>
-    <a href="/dashboard">Dashboard</a>
-    <h2>Edit Post</h2>
-    <form class="edit-post">
+<div class="card">
+    <h2 class="card-header bg-dark text-light">Edit Post</h2>
+    <form class="edit-post form-control">
         <div>
-            <label for="subject_name">Post Title:</label>
-            <input type="text" name="subject_name" value="{{post.subject_name}}"/>
+            <label class="form-label" for="subject_name">Post Title:</label>
+            <input class="form-control" type="text" name="subject_name" value="{{post.subject_name}}"/>
         </div>
         <div>
-            <label for="body_content">Post Content</label>
-            <input type="text" name="body_content" value="{{post.body_content}}"/>
+            <label class="form-label" for="body_content">Post Content</label>
+            <input class="form-control" type="text" name="body_content" value="{{post.body_content}}"/>
         </div>
-        <div>
-            created by you {{format_date post.date_created}}
-            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+        <div class="mt-2">
+        <p>
+            Created by you on {{format_date post.date_created}}
+            <a href="/post/{{post.id}}" class="text-decoration-none text-dark">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+        </p>        
         </div>
-        <button type="submit" class="save-btn">Save Post</button>
-        <button type="button" class="delete-btn">Delete Post</button>
+        <button type="button" class="delete-btn btn mt-2 btn-danger">Delete Post</button>
+        <button type="submit" class="save-btn btn mt-2 float-end btn-primary">Save Post</button>
     </form>
-</article>
+</div>
 
 {{> comments post.comments}}
 
